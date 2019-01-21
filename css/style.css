@@ -1,54 +1,112 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
 
 body {
-    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .wrapper {
     width: 100%;
+    display: flex;
+}
+
+.left-col {
+    position: fixed;
+    width: 20%;
+    z-index: 2;
+}
+
+.right-col {
+    width: 80%;
+    z-index:1;
+    margin-left: 20%;
+}
+
+.sec {
+    padding: 100px 0;
 }
 
 .main-sec {
-    background-color: #444444;
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: 50% 0;
     height: 100vh;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #ffffff;
-    background: -moz-linear-gradient(-45deg, #ffffff 33%, #ea9075 100%);
-    background: -webkit-linear-gradient(-45deg, #ffffff 33%, #ea9075 100%);
-    background: linear-gradient(135deg, #ffffff 33%, #ea9075 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ea9075', GradientType=1);
+    color: #fff;
+    background: linear-gradient(-45deg, #EE7752, #96284b, #23A6D5, #23D5AB);
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 25s ease infinite;
+    -moz-animation: Gradient 25s ease infinite;
+    animation: Gradient 25s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
 }
 
 .about {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 120px;
+}
+
+.about-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .about-title {
     font-size: 42px;
-    color: #aaaaaa;
+    color: #ffffff;
     margin: 0;
+    font-weight: 500;
 }
 
 .about-pretitle {
-    font-size: 28px;
-    color: #555555;
+    font-size: 20px;
+    color: #ffffff;
     margin: 0;
 }
 
 .about-photo {
-    width: 300px;
-    height: 300px;
+    max-width: 180px;
+    height: auto;
     margin-bottom: 5px;
 }
 
@@ -58,12 +116,12 @@ body {
 
 .sec-short-info {
     background-color: #0fa3b1;
+    background-image: url(../img/sky.png);
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
 }
 
 .short-info-wrap {
-    background-image: url(../img/sky.png);
-    background-position: 0 100%;
-    background-repeat: no-repeat;
     height: 45vh;
     display: flex;
     flex-direction: column;
@@ -74,32 +132,77 @@ body {
 
 .sec-title {
     font-size: 32px;
+    font-weight: 500;
     white-space: pre-line;
     text-align: center;
     margin-bottom: 0;
+    margin-top: 0;
 }
 
 .sec-text {
     font-size: 24px;
     font-weight: 300;
     margin-top: 10px;
+    text-align: center;
 }
 
-.sec-projects{
-    width: 1200px;
-    margin: 0 auto;
+.sec-projects {
+    background-color: #5d6891;
+}
+
+.projects-head{
+    padding: 0 0 30px 0;
+    color: #ffffff;
 }
 
 .projects {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin: 0 auto;
+    padding: 15px;
 }
 
 .project {
-    height: 350px;
-    width: 33.33%;
-    background-color: #455555;
-    padding: 5px;
+    display: flex;
+    height: 250px;
+    width: 250px;
+    flex-basis: 30%;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    background-color: #ffffff;
+}
+
+/*sec-follow*/
+
+.sec-follow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.follow-head {
+    padding: 30px;
+}
+
+.follow-icons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.follow-link {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    text-decoration: none;
+}
+
+.follow-ico {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
 }
 
